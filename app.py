@@ -16,3 +16,7 @@ def whisper(text):
 
 def murmur(text):
     return text.lower()
+
+
+def yell(text):
+    return f"{text.upper()}!"
