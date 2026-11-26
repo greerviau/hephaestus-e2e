@@ -1,6 +1,6 @@
 import unittest
 
-from app import farewell, greet, shout, whisper
+from app import farewell, greet, murmur, shout, whisper
 
 
 class GreetTest(unittest.TestCase):
@@ -21,6 +21,20 @@ class ShoutTest(unittest.TestCase):
 class WhisperTest(unittest.TestCase):
     def test_lowercases_and_appends_ellipsis(self):
         self.assertEqual(whisper("HELLO"), "hello...")
+
+
+class MurmurTest(unittest.TestCase):
+    def test_lowercases_text(self):
+        self.assertEqual(murmur("Hello World"), "hello world")
+
+    def test_leaves_non_letters_unchanged(self):
+        self.assertEqual(murmur("ALREADY LOUD!"), "already loud!")
+
+    def test_leaves_lowercase_text_unchanged(self):
+        self.assertEqual(murmur("already quiet"), "already quiet")
+
+    def test_empty_string(self):
+        self.assertEqual(murmur(""), "")
 
 
 if __name__ == "__main__":

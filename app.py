@@ -12,3 +12,7 @@ def shout(text):
 
 def whisper(text):
     return text.lower() + "..."
+
+
+def murmur(text):
+    return text.lower()
