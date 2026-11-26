@@ -9,3 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 -m unittest discover -s tests -v
+      # For the end-to-end test of auto-revert: main breaks once BREAK_MAIN lands on it.
+      - if: github.event_name == 'push'
+        run: test ! -e BREAK_MAIN
