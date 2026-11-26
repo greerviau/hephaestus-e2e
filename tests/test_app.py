@@ -1,6 +1,6 @@
 import unittest
 
-from app import farewell, greet, whisper
+from app import farewell, greet, shout, whisper
 
 
 class GreetTest(unittest.TestCase):
@@ -11,6 +11,11 @@ class GreetTest(unittest.TestCase):
 class FarewellTest(unittest.TestCase):
     def test_says_goodbye_by_name(self):
         self.assertEqual(farewell("Ada"), "Goodbye, Ada!")
+
+
+class ShoutTest(unittest.TestCase):
+    def test_upper_cases_with_exclamation_mark(self):
+        self.assertEqual(shout("hello"), "HELLO!")
 
 
 class WhisperTest(unittest.TestCase):
