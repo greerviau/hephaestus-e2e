@@ -1,6 +1,6 @@
 import unittest
 
-from app import farewell, greet, murmur, shout, whisper
+from app import farewell, greet, murmur, shout, whisper, yell
 
 
 class GreetTest(unittest.TestCase):
@@ -35,6 +35,11 @@ class MurmurTest(unittest.TestCase):
 
     def test_empty_string(self):
         self.assertEqual(murmur(""), "")
+
+
+class YellTest(unittest.TestCase):
+    def test_upper_cases_with_exclamation_mark(self):
+        self.assertEqual(yell("hi"), "HI!")
 
 
 if __name__ == "__main__":
