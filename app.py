@@ -8,3 +8,7 @@ def farewell(name):
 
 def shout(text):
     return f"{text.upper()}!"
+
+
+def whisper(text):
+    return text.lower() + "..."
